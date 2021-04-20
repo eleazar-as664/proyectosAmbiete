@@ -1,0 +1,256 @@
+/* General Styles */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+:root{
+    --main-color: rgb(255, 171, 15) ;
+}
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;  
+  font-family: 'Poppins', sans-serif;
+}
+
+.navigation{
+    width: 100;
+    height:90px;
+    background: var(--main-color);
+}
+
+h1{
+    color: white;
+    
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.navigation{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation-ul{
+    display: flex;
+    height: 100%;
+}
+
+.item{
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:20px;
+    cursor: pointer;
+    transition: .5s ease;
+}
+
+
+.item:hover{
+    background: white;
+    color: #000;
+}
+
+.icon:hover{
+    color: black;
+    cursor: pointer;
+}
+
+
+.hamburger{
+    display: none;
+    width: 50px;
+    height: 30px;
+    cursor: pointer;
+    
+}
+
+
+
+.line{
+    width: 90%;
+    height: 8px;
+    background: white;
+    transition: .5s;
+}
+
+@media (max-width:650px){
+    .navigation-ul{
+        display: none;
+    }
+    
+    .navigation-activate{
+        height: 100vh;
+    }
+
+    .navigation-ul-activate{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .item-activate{
+        height: 100%;
+    }
+
+    .icon-activate{
+        display: none;
+    }
+
+
+    .hamburger{
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        margin-right: 10px;
+    } 
+
+    .line-one{
+        transition: .5s;
+        transform: rotate(45deg) translateY(10px);
+    }
+
+    .line-two{
+        transition: .5s;
+        display: none;
+    }
+
+    .line-three{
+        transition: .5s;
+        transform: rotate(-47deg) translateY(-10px);
+    }
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.img{
+    height: 100px;
+}
+
+body {
+    background-color: rgb(2, 13, 20);
+}
+
+/* HEADER */
+
+.title h1 {
+    padding: 20px 0;
+    text-align: center;
+    font-size: 2.9em;
+    text-transform: uppercase;
+}
+
+/* CONTAINER */
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 1.6em auto;
+    display: grid;
+    gap: 1.6em;
+    /* grid-template-columns: repeat(4, 1fr) 3%; */
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.container>.header, .container>.content, .container>.sidebar, .container>.footer, .container>div {
+    background: rgb(255, 171, 15);
+    padding: 20px;
+    border: 1px solid black;
+}
+
+.container>.header, .container>.footer {
+    grid-column: 1/-1;
+    background-color: black;
+    color: #ffffff;
+}
+
+.container>.content {
+    grid-column: span 3;
+    grid-row: span 4;
+}
+
+.content>.article {
+    background: black;
+    padding: 20px;
+    margin-top: 5px;
+    color: #dfe6e9
+}
+
+.content .article h1,
+.content .article p {
+    padding: 10px;
+}
+
+.container>.sidebar {
+    grid-column: span 2;
+    grid-row: span 4;
+    background: rgb(255, 171, 15);
+    color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .sidebar img {
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.container>.related-post {
+    background: black;
+    color: #ffffff;
+    height: 180px;
+    ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease;
+}
+
+.container>.related-post:hover {
+    cursor: pointer;
+    color: #000000;
+    background: #ffffff;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 768px) {
+    .header {
+        text-align: center;
+    }
+    .container .content {
+        grid-column: 1 / -1;
+    }
+    .container .sidebar {
+        grid-column: 1 / 6;
+    }
+
+    .container .related-post {
+        grid-column: 1/-1;
+    }
+}
+
